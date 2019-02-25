@@ -1,21 +1,14 @@
 import service from '../model/service'
+import { IUserInfoParams, IUserParams } from '../model/types/api/user';
 
-interface getUserInfoData {
-  name: string
-}
-
-interface getUserData {
-  name: string
-}
-
-const getUserInfo = ({name}: getUserInfoData) => {
+const getUserInfo = ({name}: IUserInfoParams) => {
   let data = {
     name
   };
   return service.post('/todoList', data);
 }
 
-const getUser = ({name}: getUserData) => {
+const getUser = ({name}: IUserParams) => {
   let data = {
     name
   };

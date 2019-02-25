@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import './App.scss';
 import { getUserInfo, getUser } from '../../api/user';
 import { Button } from 'antd-mobile';
+import { IUserInfoParams, IUserParams } from '../../model/types/api/user';
 
-interface IApp{
+interface IHistory{
+  push: Function
+}
+
+interface IProps{
+  history: IHistory
 }
 
 interface IList{
@@ -17,22 +23,30 @@ interface IState{
 
 }
 
-class App extends Component<IApp, IState> {
-
-  readonly state = {
-    list: []
+class App extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      list: []
+    }
   }
 
   public getUser = async () => {
-    let res = await getUserInfo({
+    const userInfoParams: IUserInfoParams = {
       name: 'hzy'
-    })
-    let resUser = await getUser({
+    };
+    const userParams: IUserInfoParams = {
       name: 'hzy'
-    })
+    };
+    let res = await getUserInfo(userInfoParams);
+    let resUser = await getUser(userParams);
     this.setState({
       list: res.data.data.list
     });
+  }
+
+  public gotoPage() {
+    this.props.history.push("/study");
   }
 
   public componentDidMount() {
@@ -41,7 +55,6 @@ class App extends Component<IApp, IState> {
 
   public render() {
     const { list } = this.state;
-    // console.log(list)
     return (
       <div className="App">
         {
@@ -49,7 +62,7 @@ class App extends Component<IApp, IState> {
             <div key={e.id}>{e.title}</div>
           ))
         }
-        <Button type="primary">This is a button</Button>
+        <Button type="primary" onClick={this.gotoPage.bind(this)}>This is a button</Button>
       </div>
     );
   }
