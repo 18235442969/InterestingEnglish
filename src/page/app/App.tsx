@@ -30,7 +30,6 @@ class App extends Component<IApp, IState> {
     let resUser = await getUser({
       name: 'hzy'
     })
-    console.log(res.data.data.list);
     this.setState({
       list: res.data.data.list
     });
