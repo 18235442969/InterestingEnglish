@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import { getUserInfo, getUser } from './api/user';
+import './App.scss';
+import { getUserInfo, getUser } from '../../api/user';
 import { Button } from 'antd-mobile';
 
 interface IApp{
@@ -12,9 +12,14 @@ interface IList{
   title: string
 }
 
-class App extends Component<IApp> {
+interface IState{
+  list: IList[],
 
-  public state = {
+}
+
+class App extends Component<IApp, IState> {
+
+  readonly state = {
     list: []
   }
 
