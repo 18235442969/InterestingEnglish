@@ -1,3 +1,4 @@
 export default {
-  baseUrl: ''
+  baseUrl: '',
+  translateApi: 'http://dict-co.iciba.com/api/dictionary.php'
 }

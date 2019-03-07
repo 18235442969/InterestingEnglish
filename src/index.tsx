@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import Router from './router';
 //mock数据拦截
-import './mock';
+// import './mock';
 
 import * as serviceWorker from './serviceWorker';
 
