@@ -6,7 +6,12 @@ import { Button } from 'antd-mobile';
 import Login from './components/Login';
 import { translate } from '../../api/user';
 
+interface IHistory{
+  push: Function
+}
+
 interface IProps{
+  history: IHistory
 }
 
 interface IState{
@@ -74,7 +79,7 @@ export default class Index extends Component<IProps, IState> {
             // 动画时间设置和css中的需要一致。
             timeout={300}
           >
-          <Login closeLogin={this.closeLogin.bind(this)}/>
+          <Login closeLogin={this.closeLogin.bind(this)} history={this.props.history}/>
         </CSSTransition>
         <div className="login-layer">
         </div>

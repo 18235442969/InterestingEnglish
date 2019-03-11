@@ -47,11 +47,80 @@
   height: 100%;
   z-index: 3;
   background-color: #fff;
+  padding: 0 0.5rem;
+  color: #000;
   .loginIn-title{
     position: relative;
-    top: 1.86rem;
-    left: 0.5rem;
+    margin-top: 1.86rem;
     text-align: left;
-    font-size: 0.40rem;
+    font-size: 0.45rem;
   }
+  .loginIn-phone, .loginIn-validCode{
+    position: relative;
+    margin-top: 1.4rem;
+    text-align: left;
+    font-size: 0.28rem;
+    .phone-num, .phone-code{
+      width: 100%;
+      padding: 0.05rem 0;
+      margin-top: 0.1rem;
+      border-bottom: 1px solid #dbdcdd;
+      .phone-numInput{
+        padding-left: 0;
+        height: 0.7rem;
+      }
+      .validCode-flex{
+        .phone-codeItem{
+          flex: 60%;
+          .phone-codeInput{
+            padding-left: 0;
+            height: 0.7rem;
+          }
+        }
+        .phone-btnItem{
+          flex: 40%;
+          .phone-validBtn{
+            display: flex;
+            min-height: 44px;
+            height: 0.7rem;
+            vertical-align: middle;
+            overflow: hidden;
+            -webkit-align-items: center;
+            align-items: center;
+            justify-content: flex-end;
+            .validBtn{
+              height: 0.7rem;
+              line-height: 0.7rem;
+              width: 1.9rem;
+              font-size: 0.28rem;
+              color: #464748;
+            }
+          }
+        }
+      }
+    }
+  }
+  .loginIn-validCode{
+    margin-top: 0.91rem;
+  }
+  .loginIn-button{
+    margin: auto;
+    margin-top: 1.26rem;
+    width: 80%;
+    background-color: #18bee2;
+    border-color: #02b6df;
+    color: #fff;
+    font-size: 0.32rem;
+  }
+  .loginIn-validBtnActive{
+    background-color: #15b1d3;
+  }
+}
+
+// 修改antd样式
+.am-list-item .am-input-label, .am-list-item .am-input-control input{
+  font-size: 0.28rem !important;
+}
+.am-list-item .am-list-line{
+  padding-right: 0 !important;
 }
