@@ -3,9 +3,7 @@ import { Flex, Button, InputItem, Toast } from 'antd-mobile';
 import { isStrEmpty } from '../../../utils/valid';
 import '../Index.scss';
 
-interface IHistory{
-  push: Function
-}
+import { IHistory } from '../../../model/types/Props';
 
 interface IProps{
   closeLogin: (type: boolean) => void,
@@ -135,7 +133,7 @@ export default class Login extends Component<IProps, IState> {
   public submitLogin = () => {
     if (!this.loginValid()) {
       // this.closeLogin();
-      this.props.history.push("/study");
+      this.props.history.push("/home");
     }
   }
 

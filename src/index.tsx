@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import './assets/fonts/iconfont.css';
 import Router from './router';
 //mock数据拦截
 // import './mock';

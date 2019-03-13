@@ -4,11 +4,8 @@ import 'animate.css';
 import './Index.scss';
 import { Button } from 'antd-mobile';
 import Login from './components/Login';
-import { translate } from '../../api/user';
 
-interface IHistory{
-  push: Function
-}
+import { IHistory } from '../../model/types/Props';
 
 interface IProps{
   history: IHistory
@@ -45,10 +42,10 @@ export default class Index extends Component<IProps, IState> {
     //   alert(res);
 
     // });
-    // this.setState({
-    //   isLoginShow: true
-    // });
-   this.audioRef.play()
+    this.setState({
+      isLoginShow: true
+    });
+  //  this.audioRef.play()
   }
 
   public closeLogin(type: boolean) {
