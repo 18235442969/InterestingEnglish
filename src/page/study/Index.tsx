@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Switch, Redirect, Link} from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import 'animate.css';
 import './Index.scss';
